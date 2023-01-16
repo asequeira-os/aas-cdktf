@@ -1,0 +1,17 @@
+#!/bin/bash -e
+GO_VER="1.19.5"
+if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
+    go_platform="linux-arm64"
+elif [ "${TARGETPLATFORM}" = "linux/amd64" ]; then
+    go_platform="linux-amd64"
+else
+    echo "Unknown target platform ${TARGETPLATFORM}"
+    exit 1
+fi
+
+dl_url="https://go.dev/dl/go${GO_VER}.${go_platform}.tar.gz"
+echo "Downloading go from: ${dl_url}"
+
+rm -rf /usr/local/go 
+
+wget -c "${dl_url}" -O - | tar -C /usr/local -xz

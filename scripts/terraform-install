@@ -1,0 +1,6 @@
+#!/bin/bash -e
+echo "Installing terraform"
+git clone https://github.com/hashicorp/terraform.git
+cd terraform
+/usr/local/go/bin/go install
+cd .. && rm -rf terraform

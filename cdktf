@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+: ${AAS_CDKTF_IMAGE:=aas-cdktf}
+: ${TOP:=${PWD}}
+
+CDKTF_DIR=$(dirname ${BASH_SOURCE})
+
+# TODO 1 AAS --platform linux/amd64,linux/arm64
+
+# build image
+docker buildx build --load \
+  -t $AAS_CDKTF_IMAGE \
+  -f ${CDKTF_DIR}/Dockerfile  \
+  "${CDKTF_DIR}"
+
+# running with assumptions about user dirs for now
+cd ${TOP}
+docker run --rm \
+  -v "${TOP}:/top"  \
+  -v "${TOP}/creds/gcloud:/root/.config/gcloud"   \
+  -it $AAS_CDKTF_IMAGE bash -l

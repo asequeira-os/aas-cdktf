@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+echo "
+alias python=python3.10
+alias go=/usr/local/go/bin/go
+alias terraform=/root/go/bin/terraform
+alias gcloud=/aas-docker/google-cloud-sdk/bin/gcloud
+" >> /root/.bashrc
