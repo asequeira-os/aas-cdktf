@@ -1,11 +1,24 @@
 # Dockerized Terraform CDK
 
-[cdktf](./cdktf) (temporary script) creates the image
-and runs it with this git repo dir mounted at `/top`.
+[cdktf](./cdktf) script creates the image
+and runs it with current dir mounted at `/top`.
 
-But the generated docker image should be usable (once stable)
-for multiple `cdktf` projects by running it with the actual
-project mounted at `/top`.
+To use
+
+- checkout this repo somewhere
+- cd to your project that will be using cdktf
+- run the cdktf script.
+
+Example:
+
+```
+cd ~/mygithubdir
+git clone git@github.com:asequeira-os/aas-cdktf.git
+cd ~/my-project
+mkdir mycdktf
+cd mycdktf
+~/mygithubdir/aas-cdktf/cdktf
+```
 
 New cdktf *project* is started by  
 `cdktf init --template=python --local`  
