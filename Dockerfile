@@ -23,7 +23,7 @@ COPY README.md /aas-docker
 
 # single quotes are important since $PATH should not expand
 RUN echo 'export PS1="aas-cdktf ${PS1}"' >> /root/.bashrc
-RUN echo 'export PATH=/root/go/bin:${PATH}' >> /root/.profile
+RUN echo 'export PATH=/root/go/bin:${PATH}' >> /root/.bashrc
 
 WORKDIR /top
 
