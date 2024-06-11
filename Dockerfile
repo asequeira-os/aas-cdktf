@@ -1,12 +1,11 @@
-FROM ubuntu:22.04
+FROM python:3.12.1-slim-bookworm
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
 RUN apt-get update
 
-RUN apt install -y curl wget git file tree vim emacs
+RUN apt install -y gcc g++ make curl wget git file tree vim emacs
 
-RUN apt-get install -y python3.10 python3-pip
 RUN pip install pipenv
 
 RUN mkdir -p /aas-docker

@@ -1,5 +1,5 @@
 #!/bin/bash -e
-GO_VER="1.19.5"
+GO_VER="1.22.0"
 if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
     go_platform="linux-arm64"
 elif [ "${TARGETPLATFORM}" = "linux/amd64" ]; then
