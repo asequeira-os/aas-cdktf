@@ -1,7 +1,7 @@
 #!/bin/bash -e
 echo "Installing gcloud cli"
 
-: ${GCLI_VER:=416.0.0}
+: "${GCLI_VER:=479.0.0}"
 
 if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
     ARCH="linux-arm"
