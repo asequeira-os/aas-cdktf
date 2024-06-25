@@ -5,6 +5,7 @@ ARG BUILDPLATFORM
 RUN apt-get update
 
 RUN apt install -y gcc g++ make curl wget git file tree vim emacs
+RUN apt install -y postgresql-client
 
 RUN pip install pipenv
 
