@@ -21,6 +21,7 @@ RUN ./aliases
 RUN ./verify_all
 COPY README.md /aas-docker
 
+# TODO 0 AAS pick arch from build
 RUN curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.11.4/cloud-sql-proxy.linux.arm64
 RUN chmod +x cloud-sql-proxy
 
