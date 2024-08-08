@@ -1,6 +1,8 @@
 #!/bin/bash -e
 echo "Installing terraform"
-git clone https://github.com/hashicorp/terraform.git
+: "${TERRAFORM_VER:="v1.9.4"}"
+
+git clone -b "${TERRAFORM_VER}"  --depth 1 https://github.com/hashicorp/terraform.git
 cd terraform
 /usr/local/go/bin/go install
 cd .. && rm -rf terraform
