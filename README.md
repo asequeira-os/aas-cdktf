@@ -1,5 +1,33 @@
 # Dockerized Terraform CDK
 
+## Regular use
+Use the published docker image `ghcr.io/asequeira-os/aas-cdktf`
+
+The following commands should be available
+- `terraform` 
+- `cdktf`
+- `gcloud`
+- `python`
+- `node`
+- `cloud-sql-proxy`
+
+A `docker compose` based usage could look like below
+```
+services:
+  mycdktf:
+    image: ghcr.io/asequeira-os/aas-cdktf:latest
+    working_dir: /top/mycdktfdir
+    volumes:
+      - /path/to/yourcdkcode:/top
+      - /path/to/gcp/creds:/root/.config/gcloud
+    command: ["sleep","infinity"]
+    environment:
+      - SOME_PASSWORD_VAR=mypassword
+      - GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud/somecredfile
+
+```
+
+## Development
 [cdktf](./cdktf) script creates the image
 and runs it with current dir mounted at `/top`.
 
