@@ -8,8 +8,8 @@ The following commands should be available
 - `cdktf`
 - `gcloud`
 - `python`
-- `node`
-- `cloud-sql-proxy`
+
+See [verify_all](./scripts/verify_all) to see full list
 
 A `docker compose` based usage could look like below
 ```

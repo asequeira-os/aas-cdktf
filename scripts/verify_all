@@ -1,11 +1,17 @@
 #!/bin/bash -lie
 echo "Verifying all tools..."
-python --version
-pipenv --version
-pip --version
-node --version
-go version
-terraform version
-gcloud --version
+
 cdktf --version
+cloud-sql-proxy --version
+emacs --version
+gcloud --version
+go version
+node --version
+pip --version
+pipenv --version
+psql --version
+python --version
+terraform version
+vim --version
+
 echo  " - OK"
