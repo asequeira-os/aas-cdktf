@@ -1,6 +1,19 @@
 #!/bin/bash -e
 echo "Installing terraform"
-git clone https://github.com/hashicorp/terraform.git
-cd terraform
-/usr/local/go/bin/go install
-cd .. && rm -rf terraform
+: "${TERRAFORM_VER:="1.9.4"}"
+
+if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
+    ARCH="arm64"
+elif [ "${TARGETPLATFORM}" = "linux/amd64" ]; then
+    ARCH="amd64"
+else
+    echo "Unknown target platform ${TARGETPLATFORM}"
+    exit 1
+fi
+
+echo "Downloading terraform ${TERRAFORM_VER}"
+wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_${ARCH}.zip
+
+unzip terraform_"${TERRAFORM_VER}"_linux_${ARCH}.zip
+
+mv terraform /usr/local/bin/
