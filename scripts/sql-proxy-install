@@ -1,4 +1,6 @@
 #!/bin/bash -e
+GCP_SQL_PROXY_VERSION="v2.13.0"
+
 echo "Installing CloudSQL proxy"
 
 if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
@@ -10,7 +12,7 @@ else
     exit 1
 fi
 
-url="https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.11.4/cloud-sql-proxy.linux.${ARCH}"
+url="https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/${GCP_SQL_PROXY_VERSION}/cloud-sql-proxy.linux.${ARCH}"
 
 curl -o cloud-sql-proxy "$url"
 chmod +x cloud-sql-proxy
