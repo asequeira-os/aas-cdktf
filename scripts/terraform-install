@@ -1,6 +1,6 @@
 #!/bin/bash -e
 echo "Installing terraform"
-: "${TERRAFORM_VER:="1.9.4"}"
+: "${TERRAFORM_VER:="1.9.8"}"
 
 if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then
     ARCH="arm64"
