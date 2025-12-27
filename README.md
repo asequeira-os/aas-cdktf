@@ -1,5 +1,8 @@
 # Dockerized Terraform CDK
 
+## _Deprecation note_ - Dec 2025
+Per Hashicorp, [CDK for Terraform](https://developer.hashicorp.com/terraform/cdktf) is now deprecated.
+
 ## Regular use
 Use the published docker image `ghcr.io/asequeira-os/aas-cdktf`
 
