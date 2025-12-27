@@ -1,5 +1,5 @@
 #!/bin/bash -e
-: "${CDKTF_VERSION:=0.20.11}"
+: "${CDKTF_VERSION:=0.21.0}"
 : "${NODE_VERSION:=22.14.0}"
 : "${NVM_VERSION:=v0.40.2}"
 
