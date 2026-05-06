@@ -1,4 +1,4 @@
-FROM python:3.13.9-slim-trixie
+FROM python:3.14.4-slim-trixie
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 

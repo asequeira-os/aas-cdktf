@@ -1,5 +1,5 @@
 #!/bin/bash -e
-GCP_SQL_PROXY_VERSION="v2.20.0"
+GCP_SQL_PROXY_VERSION="v2.21.3"
 
 echo "Installing CloudSQL proxy"
 
