@@ -1,7 +1,7 @@
 #!/bin/bash -e
 : "${CDKTF_VERSION:=0.21.0}"
-: "${NODE_VERSION:=22.14.0}"
-: "${NVM_VERSION:=v0.40.2}"
+: "${NODE_VERSION:=22.23.2}"
+: "${NVM_VERSION:=v0.40.7}"
 
 curl -o- \
   "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" \
