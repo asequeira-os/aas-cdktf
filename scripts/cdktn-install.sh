@@ -1,5 +1,5 @@
 #!/bin/bash -e
-: "${CDKTF_VERSION:=0.21.0}"
+: "${CDKTN_VERSION:=0.22.0}"
 : "${NODE_VERSION:=22.23.2}"
 : "${NVM_VERSION:=v0.40.7}"
 
@@ -14,5 +14,8 @@ source ~/.nvm/nvm.sh
 nvm install "${NODE_VERSION}"
 nvm use node
 
-npm install --global cdktf-cli@"${CDKTF_VERSION}"
+npm install --global cdktn-cli@"${CDKTN_VERSION}"
 
+# Existing CDKTF projects can keep invoking `cdktf`; the CLI is compatible in v0.22.
+cdktn_bin="$(command -v cdktn)"
+ln -sfn "${cdktn_bin}" "$(dirname "${cdktn_bin}")/cdktf"
