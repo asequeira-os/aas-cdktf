@@ -1,7 +1,7 @@
 #!/bin/bash -e
 ./go-install
 ./terraform-install
-./cdktf-install.sh
+./cdktn-install.sh
 ./gcloud-cli-install
 ./sql-proxy-install
 ./aliases

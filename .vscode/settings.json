@@ -2,6 +2,7 @@
     "files.autoSave": "afterDelay",
     "cSpell.words": [
         "Buildx",
+        "cdktn",
         "TARGETPLATFORM",
         "trixie"
     ]

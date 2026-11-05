@@ -1,6 +1,7 @@
 #!/bin/bash -lie
 echo "Verifying all tools..."
 
+cdktn --version
 cdktf --version
 cloud-sql-proxy --version
 emacs --version
